@@ -1,4 +1,4 @@
-circleThreshold = 0; %set this value
+circleThreshold = double(100)/255; %set
 darkThreshold   = 0; %set this value
 
 %path to sphere and object images
