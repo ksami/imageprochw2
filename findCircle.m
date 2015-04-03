@@ -19,10 +19,10 @@ for i=1:row
     end
 end
 
-%//debug: shows a black circle on white
-%assume perfect thresholding, perfect circle
-imshow(binarized);
-pause;
+% %//debug: shows a black circle on white
+% %assume perfect thresholding, perfect circle
+% imshow(binarized);
+% pause;
 
 isStart1Found = false;
 isStart2Found = false;
@@ -75,20 +75,20 @@ end
 r = (double(endpt2(1)-endpt1(1))) / 2.0;
 cy = round(endpt1(1)+r);
 
-%draw centre
-for dy=-10:10
-    binarized(cy+dy, cx) = 0.75;
-end
-for dx=-10:10
-    binarized(cy, cx+dx) = 0.75;
-end
-
-%draw radius
-for dr=1:r
-    binarized(cy, cx-dr) = 1.0;
-end
-
-%//debug
-imshow(binarized);
+% %draw centre
+% for dy=-10:10
+%     binarized(cy+dy, cx) = 0.75;
+% end
+% for dx=-10:10
+%     binarized(cy, cx+dx) = 0.75;
+% end
+% 
+% %draw radius
+% for dr=1:r
+%     binarized(cy, cx-dr) = 1.0;
+% end
+% 
+% %//debug
+% imshow(binarized);
 
 end

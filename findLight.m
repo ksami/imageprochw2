@@ -17,7 +17,7 @@ x = ceil(double(idx)/row);
 
 % Find normal at brightest pixel %
 %using sphere eqn, set cz = 0 ie. sphere at (cx, cy, 0)
-z = sqrt( (x-cx)^2 + (y-cy)^2 - r^2 );
+z = sqrt( abs((x-cx)^2 + (y-cy)^2 - r^2) );
 
 if (isa(img, 'uint8'))
     intensity = double(img(y,x))/255;
@@ -26,6 +26,8 @@ else
 end
 
 lv = [x y z];
+mag = norm(lv);
+lv = lv / mag;
 lv = intensity * lv;
 
 end
