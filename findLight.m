@@ -6,16 +6,26 @@ function [lv] = findLight(img, cx, cy, r)
 
 [row, col] = size(img);
 
-% Find brightest pixel %
+% Find brightest pixel (x,y) %
 %matrices indexed as
 %1 4 7
 %2 5 8
 %3 6 9
 [val, idx] = max(img(:));
-i = mod(idx, row);
-j = ceil(double(idx)/row);
+x = mod(idx, row);
+y = ceil(double(idx)/row);
 
-% Find normal %
-%using sphere eqn and distance away from cx cy can get z?
+% Find normal at brightest pixel %
+%using sphere eqn, set cz = 0 ie. sphere at (cx, cy, 0)
+z = sqrt( (x-cx)^2 + (y-cy)^2 - r^2 );
+
+if (isa(img, 'uint8'))
+    intensity = double(img(x,y))/255;
+else
+    intensity = img(x,y);
+end
+
+lv = [x y z];
+lv = intensity * lv;
 
 end
