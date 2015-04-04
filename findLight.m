@@ -17,17 +17,21 @@ x = ceil(double(idx)/row);
 
 % Find normal at brightest pixel %
 %using sphere eqn, set cz = 0 ie. sphere at (cx, cy, 0)
-z = sqrt( abs((x-cx)^2 + (y-cy)^2 - r^2) );
+z = sqrt( r^2 - (x-cx)^2 - (y-cy)^2 );
 
-if (isa(img, 'uint8'))
-    intensity = double(img(y,x))/255;
-else
-    intensity = img(y,x);
-end
-
-lv = [x y z];
-mag = norm(lv);
+intensity = img(y,x);
+centre = [cx cy 0];
+brightest = [x y z];
+lv = brightest - centre;
+mag = sqrt( abs(lv(1)^2 + lv(2)^2 + lv(3)^2) );
 lv = lv / mag;
 lv = intensity * lv;
+
+% % //debug: check lv
+% imshow(img);
+% hold on;
+% line([cx,x],[cy,y],'Color','r','LineWidth',2);
+% hold off;
+% pause;
 
 end

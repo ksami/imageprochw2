@@ -24,8 +24,10 @@ for y=1:row
         n = inv(S)*I;
         mag = norm(n);
         albedo(y,x) = mag;
-        normals(1,idx) = n(1)/mag;
-        normals(2,idx) = n(2)/mag;
-        normals(3,idx) = n(3)/mag;
+        normal = n/mag;
+        normals(:,idx) = normal;
+%         normals(2,idx) = n(2)/mag;
+%         normals(3,idx) = n(3)/mag;
     end
 end
+       
