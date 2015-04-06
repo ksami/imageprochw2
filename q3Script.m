@@ -1,4 +1,4 @@
-darkThreshold   = 0.2; %set
+darkThreshold   = 0.2;
 
 path = '../data/q3';
 
@@ -10,28 +10,6 @@ load(sprintf('%s/lights.mat', path));
 % 
 % %compute normals and albedos with photometric stereo
 % [normals albedo] = computeNormals( img1, img2, img3, lv1, lv2, lv3, darkThreshold);
-% 
-% 
-% % %Visualization only below this line
-% %  step = 10;
-% %  X = 1:step:size(img1,2);
-% %  Y = 1:step:size(img1,1);
-% %  U = reshape(normals(1,:), size(img1));
-% %  V = reshape(normals(2,:), size(img1));
-% %  U = U(1:10:end, 1:10:end);
-% %  V = V(1:10:end, 1:10:end);
-% %  
-% %  figure(1);
-% %  hold off;
-% %  imshow(img1);
-% %  hold on;
-% %  quiver(X,Y,U,V);
-% %  title('Computed Surface Normals');
-% %  
-% %  figure(2);
-% %  imagesc(albedo);
-% %  title('Unnormalized Albedo');
-% 
 % 
 % normals = reshape(normals, size(img1,1), size(img1,2), 3);
 % [Ni,Z] = integrability2(normals);

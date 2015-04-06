@@ -1,5 +1,5 @@
-circleThreshold = double(100)/255; %set
-darkThreshold   = 0.2; %set
+circleThreshold = double(100)/255;
+darkThreshold   = 0.2;
 
 %path to sphere and object images
 datapath = '../data/q2';

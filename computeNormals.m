@@ -26,8 +26,6 @@ for y=1:row
         albedo(y,x) = mag;
         normal = n/mag;
         normals(:,idx) = normal;
-%         normals(2,idx) = n(2)/mag;
-%         normals(3,idx) = n(3)/mag;
     end
 end
        

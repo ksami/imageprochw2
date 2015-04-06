@@ -75,6 +75,7 @@ end
 r = (double(endpt2(1)-endpt1(1))) / 2.0;
 cy = round(endpt1(1)+r);
 
+% %//debug
 % %draw centre
 % for dy=-10:10
 %     binarized(cy+dy, cx) = 0.75;
@@ -88,7 +89,6 @@ cy = round(endpt1(1)+r);
 %     binarized(cy, cx-dr) = 1.0;
 % end
 % 
-% %//debug
 % imshow(binarized);
 
 end
